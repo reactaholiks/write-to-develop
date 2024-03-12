@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react"
 import "./App.css"
-import {ButtonStyles, ButtonWrapper, ContentWrapper, DescriptionStyles, TitleStyles} from "./AppStyles"
+import {
+  ButtonStyles,
+  ButtonWrapper,
+  ContentWrapper,
+  DescriptionStyles,
+  TitleStyles,
+} from "./AppStyles"
 import Emmanuel from "./Component/Header"
 
 function App(props) {
-  const image =
-    "https://media.istockphoto.com/id/1430886219/photo/designer-shows-color-palette-of-samples-of-different-colors-and-shades-closeup.jpg?s=1024x1024&w=is&k=20&c=7IdPXsdN4WiuaNCKzvw4vnyBX3O9Fvp2b1M-bwkPs-g="
-  const title = "Product 1"
-  const description = "this is Ecommerce application"
-  const buttonValue = "Book Now"
-
   const data = [
     {
       id: "add1",
@@ -40,10 +40,41 @@ function App(props) {
     },
   ]
 
+  const HeaderData = {
+    items: [
+      {
+        logo: "Ecommerce",
+        title: "FlipKart",
+        cart: "CART",
+      },
+      {
+        logo: "Ecommerce",
+        title: "FlipKart",
+        cart: "CART",
+      },
+      {
+        logo: "Ecommerce",
+        title: "FlipKart",
+        cart: "CART",
+      },
+    ],
+    navItems: [
+      {
+        navlogo: "./",
+        navTitle: "NavBar",
+      },
+    ],
+  }
+
+ const SetItems = () => {
+  let HeaderData = "this is header"
+  return HeaderData
+ }
+ 
 
   return (
     <>
-      <Emmanuel title={"This is Header"} />
+      <Emmanuel SetItems={SetItems} />
       <div style={ContentWrapper}>
         {data?.map((item) => {
           return (
