@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.9112324c.css",
-    "main.js": "/static/js/main.ec577af1.js",
-    "index.html": "/index.html",
-    "main.9112324c.css.map": "/static/css/main.9112324c.css.map",
-    "main.ec577af1.js.map": "/static/js/main.ec577af1.js.map"
+    "main.css": "/reactaholiks/static/css/main.9112324c.css",
+    "main.js": "/reactaholiks/static/js/main.ec577af1.js",
+    "index.html": "/reactaholiks/index.html",
+    "main.9112324c.css.map": "/reactaholiks/static/css/main.9112324c.css.map",
+    "main.ec577af1.js.map": "/reactaholiks/static/js/main.ec577af1.js.map"
   },
   "entrypoints": [
     "static/css/main.9112324c.css",
