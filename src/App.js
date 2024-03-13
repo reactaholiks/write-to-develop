@@ -8,7 +8,6 @@ import {
   DescriptionStyles,
   TitleStyles,
 } from "./AppStyles"
-import Emmanuel from "./Component/Header"
 import Header from "./Component/Header"
 
 function App(props) {
