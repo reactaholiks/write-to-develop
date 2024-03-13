@@ -40,36 +40,7 @@ function App(props) {
     },
   ]
 
-  const HeaderData = {
-    items: [
-      {
-        logo: "Ecommerce",
-        title: "FlipKart",
-        cart: "CART",
-      },
-      {
-        logo: "Ecommerce",
-        title: "FlipKart",
-        cart: "CART",
-      },
-      {
-        logo: "Ecommerce",
-        title: "FlipKart",
-        cart: "CART",
-      },
-    ],
-    navItems: [
-      {
-        navlogo: "./",
-        navTitle: "NavBar",
-      },
-    ],
-  }
 
-  const SetItems = () => {
-    let HeaderData = "this is header"
-    return HeaderData
-  }
 
   return (
     <>
