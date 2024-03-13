@@ -9,6 +9,7 @@ import {
   TitleStyles,
 } from "./AppStyles"
 import Emmanuel from "./Component/Header"
+import Header from "./Component/Header"
 
 function App(props) {
   const data = [
@@ -66,15 +67,14 @@ function App(props) {
     ],
   }
 
- const SetItems = () => {
-  let HeaderData = "this is header"
-  return HeaderData
- }
- 
+  const SetItems = () => {
+    let HeaderData = "this is header"
+    return HeaderData
+  }
 
   return (
     <>
-      <Emmanuel SetItems={SetItems} />
+      <Header title={"HeaderData"} />
       <div style={ContentWrapper}>
         {data?.map((item) => {
           return (
