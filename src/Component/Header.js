@@ -8,7 +8,7 @@ export const Header = (props) => {
     <>
       <div
         style={{
-          backgroundColor: "#ec5353",
+          backgroundColor: "#ec56",
           height: "7vw",
           display: "flex",
           justifyContent: "space-between",
