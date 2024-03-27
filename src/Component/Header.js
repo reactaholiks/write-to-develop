@@ -1,24 +1,44 @@
-import React from "react"
+import React, { useState } from "react"
 
 export const Header = (props) => {
-  const HeaderData = [
-    {
-      socialLogo:
-        "https://cdn.pixabay.com/photo/2017/11/10/05/05/twitter-2935414_1280.png",
-    },
-    {
-      socialLogo:
-        "https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png",
-    },
-    {
-      socialLogo:
-        "https://www.iconpacks.net/icons/2/free-facebook-icon-2869-thumb.png",
-    },
-    {
-      socialLogo:
-        "https://i.pinimg.com/736x/40/e2/6b/40e26beab6a4049d7d52cee459a7dbb8.jpg",
-    },
-  ]
+
+  const {counter, headerData} = props
+
+  const [weather, setWeather] = useState(null)
+
+  const handleHover = (props) => {
+    window?.open(props)
+  }
+
+  function handleLocationClick() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(handleUpdate, error)
+    } else {
+      console.log("Geolocation not supported")
+    }
+  }
+
+  const handleUpdate = (position) => {
+    const latitude = position.coords.latitude
+    const longitude = position.coords.longitude
+
+    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`)
+    fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setWeather(data)
+      })
+      .catch((error) => console.log(error))
+    console.log("data==", error)
+  }
+
+  function error() {
+    console.log("Unable to retrieve your location")
+  }
+
+
   return (
     <>
       <div
@@ -51,10 +71,13 @@ export const Header = (props) => {
             gap: "10vw",
           }}>
           <div style={{ display: "flex", gap: "3vw" }}>
-            {HeaderData.map((item, index) => {
+            {headerData?.map((item, index) => {
               return (
                 <>
                   <div
+                    onClick={() => {
+                      handleHover(item?.socialURL)
+                    }}
                     style={{
                       backgroundColor: "#F8F7F0",
                       height: "45px",
@@ -65,6 +88,7 @@ export const Header = (props) => {
                       borderRadius: "50%",
                     }}>
                     <img
+                      style={{ cursor: "pointer" }}
                       src={item?.socialLogo}
                       alt="img-dlt"
                       height="20px"
@@ -80,16 +104,45 @@ export const Header = (props) => {
             <hr style={{ height: "4vw" }} />
 
             <img
+              onClick={() => {
+                handleLocationClick()
+              }}
               src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png"
               alt="img-dlt"
               height="20px"
               width="20px"
             />
+
             <div>
               <p style={{ margin: 0, paddingBottom: "5px" }}>
-                This is my location
+                {weather?.address?.city}
               </p>
-              <p style={{ margin: 0 }}>This is my City</p>
+              <p style={{ margin: 0 }}>{weather?.address?.country}</p>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ position: "fixed" }}>
+              <img
+                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
+                alt="img-dlt"
+                height="30px"
+                width="30px"
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  backgroundColor: "green",
+                  color: "white",
+                  borderRadius: "100%",
+                  height: "18px",
+                  width: "18px",
+                  bottom: "20px",
+                  left: "16px",
+                  textAlign: "center",
+                }}>
+                {counter}
+              </span>
             </div>
           </div>
         </div>

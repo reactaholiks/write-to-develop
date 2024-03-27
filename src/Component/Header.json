@@ -1,0 +1,29 @@
+
+
+ {
+    "headerData":[
+        {
+      "socialLogo":
+        "https://cdn.pixabay.com/photo/2017/11/10/05/05/twitter-2935414_1280.png",
+        "socialURL":"https://twitter.com/?lang=en"
+    },
+    {
+      "socialLogo":
+        "https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png",
+        "socialURL":"https://www.instagram.com"
+
+    },
+    {
+      "socialLogo":
+        "https://www.iconpacks.net/icons/2/free-facebook-icon-2869-thumb.png",
+        "socialURL":"https://www.facebook.com"
+
+    },
+    {
+      "socialLogo":
+        "https://i.pinimg.com/736x/40/e2/6b/40e26beab6a4049d7d52cee459a7dbb8.jpg",
+      "socialURL":"https://in.pinterest.com"
+
+    }
+    ]
+ }
