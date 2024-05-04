@@ -1,27 +1,16 @@
-import React, { useState } from "react"
+import React from "react"
 import "./App.css"
 import headerData from "./Component/Header.json"
 import Header from "./Component/Header"
-import HeroBanner from "./Component/hero-banner"
-import { ProductCard } from "./Component/product-card-component"
-import ProductImage from "./Images/apple-product.png"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./Component/Home"
+import Contact from "./Component/contact"
+import MainComponent from "./Component/MainComponent";
 
-function App() {
-  let [counter, setCounter] = useState(0)
-
-  const value = {
-    title: "apple",
-    price: "$50.0",
-    image: ProductImage,
-    description: "this is apple",
-  }
-
+const App = () => {
   return (
     <>
-      <Header {...headerData} counter={counter} />
-      <HeroBanner />
-
-      <ProductCard {...value} />
+     <MainComponent/>
     </>
   )
 }

@@ -65,7 +65,6 @@ export const Header = (props) => {
 
         <div
           style={{
-            // border: "1px solid green",
             display: "flex",
             alignItems: "center",
             gap: "10vw",
