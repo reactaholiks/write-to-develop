@@ -1,4 +1,5 @@
-import BottomHeader from "./bottom-header"
+import BottomHeader from "./Header/bottom-header"
+import HeroBanner from "./hero-banner"
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         }}>
         <BottomHeader />
       </div>
+      <HeroBanner />
     </>
   )
 }

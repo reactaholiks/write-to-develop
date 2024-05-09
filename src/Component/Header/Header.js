@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 
 export const Header = (props) => {
-
-  const {counter, headerData} = props
+  const { counter, headerData, contactData } = props
+  console.log("contactData", contactData)
 
   const [weather, setWeather] = useState(null)
 
@@ -38,7 +38,6 @@ export const Header = (props) => {
     console.log("Unable to retrieve your location")
   }
 
-
   return (
     <>
       <div
@@ -67,9 +66,9 @@ export const Header = (props) => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "10vw",
+            gap: "3vw",
           }}>
-          <div style={{ display: "flex", gap: "3vw" }}>
+          <div style={{ display: "flex", gap: "1.4vw" }}>
             {headerData?.map((item, index) => {
               return (
                 <>
@@ -78,7 +77,7 @@ export const Header = (props) => {
                       handleHover(item?.socialURL)
                     }}
                     style={{
-                      backgroundColor: "#F8F7F0",
+                      backgroundColor: "#f8f7f1",
                       height: "45px",
                       width: "45px",
                       display: "flex",
@@ -87,11 +86,11 @@ export const Header = (props) => {
                       borderRadius: "50%",
                     }}>
                     <img
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: "pointer", objectFit: "contain" }}
                       src={item?.socialLogo}
                       alt="img-dlt"
-                      height="20px"
-                      width="20px"
+                      height="14px"
+                      width="14px"
                     />
                   </div>
                 </>
@@ -99,51 +98,37 @@ export const Header = (props) => {
             })}
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
-            <hr style={{ height: "4vw" }} />
+            
+          {contactData?.map((item ,index) => {
+            return (
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "0.6vw" }}>
+                <img
+                  onClick={() => {
+                    handleLocationClick()
+                  }}
+                  src={item?.appIcon}
+                  alt="img-dlt"
+                  height="25px"
+                  width="25px"
+                  sx={{
+                    objectFit: "objectFit",
+                  }}
+                />
 
-            <img
-              onClick={() => {
-                handleLocationClick()
-              }}
-              src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png"
-              alt="img-dlt"
-              height="20px"
-              width="20px"
-            />
+                <div>
+                  <p style={{ margin: 0, paddingBottom: "5px" }}>
+                    {item?.appTitle}
+                  </p>
+                  <p style={{ margin: 0 }}>{item?.contactDetail}</p>
+                </div>
+                {index != 0 && <hr style={{ height: "4vw" }} />}
+              </div>
+            )
+         
+          })}
 
-            <div>
-              <p style={{ margin: 0, paddingBottom: "5px" }}>
-                {weather?.address?.city}
-              </p>
-              <p style={{ margin: 0 }}>{weather?.address?.country}</p>
-            </div>
-          </div>
-
-          <div>
-            <div style={{ position: "fixed" }}>
-              <img
-                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
-                alt="img-dlt"
-                height="30px"
-                width="30px"
-              />
-              <span
-                style={{
-                  position: "absolute",
-                  backgroundColor: "green",
-                  color: "white",
-                  borderRadius: "100%",
-                  height: "18px",
-                  width: "18px",
-                  bottom: "20px",
-                  left: "16px",
-                  textAlign: "center",
-                }}>
-                {counter}
-              </span>
-            </div>
-          </div>
+         
         </div>
       </div>
     </>

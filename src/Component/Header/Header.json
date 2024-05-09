@@ -1,0 +1,39 @@
+{
+  "headerData": [
+    {
+      "socialLogo": "/Images/HeaderImages/Twitter-Icon.png",
+      "socialURL": "https://twitter.com/?lang=en"
+    },
+    {
+      "socialLogo": "/Images/HeaderImages/Pin-Trest-Icon.png",
+      "socialURL": "https://www.instagram.com"
+    },
+    {
+      "socialLogo": "/Images/HeaderImages/Insta-Icon.png",
+      "socialURL": "https://www.facebook.com"
+    },
+    {
+      "socialLogo": "/Images/HeaderImages/Face-Book-Icon.png",
+      "socialURL": "https://in.pinterest.com"
+    }
+  ],
+
+  "contactData": [
+    {
+      "appIcon": "/Images/HeaderImages/Phone-Icon.png",
+      "appTitle": "Call Anytime",
+      "contactDetail": "+ 98 (000) - 9630"
+    },
+     {
+       "appIcon": "/Images/HeaderImages/Email-Icon.png",
+       "appTitle": "Send email",
+       "contactDetail": "email@gmail.com"
+     },
+      {
+        "appIcon": "/Images/HeaderImages/Location-Icon.png",
+        "appTitle": "location",
+        "contactDetail": "Melbourne, Australia"
+      }
+  
+  ]
+}
