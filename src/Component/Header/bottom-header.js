@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import '../../App.css'
 
 const BottomHeader = () => {
   return (
     <>
       <div
         style={{
+          position:"relative",
+          top:"4.6vw",
           backgroundColor: "#f8f7f1",
           alignItems: "center",
         }}>
@@ -15,12 +18,11 @@ const BottomHeader = () => {
             gap: "8vw",
             justifyContent: "center",
           }}>
-          <h3>Home</h3>
-          <h3>About</h3>
-          <h3>Services</h3>
-          <h3>Shop</h3>
-          <h3 sx={{ margin: 0 }}>
-            <Link to="/contact?ioi=kn&jhg=jhgv"> Contact </Link>
+          <h3 > <Link className="nav" to="/homepage"> Home </Link></h3>
+          <h3> <Link className="nav"to={"/aboutUs"}>About </Link></h3>
+          <h3> <Link className="nav" to={"/services"}>Services </Link></h3>
+          <h3> <a className="nav" href="/shop-now">Shop </a></h3>
+          <h3>
           </h3>
           <div>
             <div style={{ position: "fixed", paddingTop: "1vw" }}>

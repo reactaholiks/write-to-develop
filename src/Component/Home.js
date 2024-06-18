@@ -4,13 +4,7 @@ import HeroBanner from "./hero-banner"
 const Home = () => {
   return (
     <>
-      <div
-        style={{
-          paddingTop: "90px",
-        }}>
-        <BottomHeader />
-      </div>
-      <HeroBanner />
+    <h1 style={{paddingTop:"50px"}}>This is Home Page</h1>
     </>
   )
 }
