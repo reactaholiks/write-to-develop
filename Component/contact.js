@@ -1,4 +1,5 @@
-import { Link, Outlet, useLocation, useParams } from "react-router-dom"
+import Link from "next/link";
+import {  Outlet, useLocation, useParams } from "react-router-dom"
 
 const Contact = () => {
   
